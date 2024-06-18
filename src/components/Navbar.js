@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-bgDark py-4">
-        <h1 className="text-3xl font-bold text-center text-white">React News Portal</h1>
+        <h1 className="text-3xl font-bold text-center text-white">Simple React News Portal</h1>
       </nav>
     </div>
   )
