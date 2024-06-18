@@ -12,7 +12,7 @@ const Cards = ({ category }) => {
         async function fetchData() {
             setLoading(true);
             try {
-                let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}&page=${page}`;
+                let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=c7b6a588832d4860a55127e8a7a83808&page=${page}`;
                 if (category !== "All") {
                     url += `&category=${category.toLowerCase()}`;
                 }
