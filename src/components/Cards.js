@@ -1,4 +1,3 @@
-// src/components/Cards.js
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import { toast } from 'react-toastify';
@@ -13,16 +12,23 @@ const Cards = ({ category }) => {
         async function fetchData() {
             setLoading(true);
             try {
-                let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=5ee6c537618c42ea9eda8aad654f0641&page=${page}`;
+                let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}&page=${page}`;
                 if (category !== "All") {
                     url += `&category=${category.toLowerCase()}`;
                 }
+                console.log("Fetching URL: ", url); // Debugging line
                 let response = await fetch(url);
                 let output = await response.json();
-                setFilteredNews(output.articles || []); // Ensure articles is an array
-                setTotalPages(Math.ceil(output.totalResults / 5)); // Assuming 20 articles per page
+                console.log("API Response: ", output); // Debugging line
+                if (response.ok) {
+                    setFilteredNews(output.articles || []); // Ensure articles is an array
+                    setTotalPages(Math.ceil(output.totalResults / 20)); // Assuming 20 articles per page
+                } else {
+                    toast.error(`Error: ${output.message}`);
+                }
             } catch (error) {
-                toast.error("Network me koi dikkat hai");
+                console.error("Fetching data failed:", error);
+                toast.error("Failed to fetch news: " + error.message);
             }
             setLoading(false);
         }
@@ -31,7 +37,7 @@ const Cards = ({ category }) => {
     }, [category, page]);
 
     if (loading) {
-        return <div className=' text-cyan-50 font-bold'>Loading...</div>;
+        return <div className='text-cyan-50 font-bold'>Loading...</div>;
     }
 
     const validArticles = filteredNews.filter(article => {
