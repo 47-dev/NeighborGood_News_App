@@ -1,7 +1,7 @@
-# Top Course Filtering with React
+# News App with React
 
 ## Project Overview
-The **Top Course Filtering with React** project is a dynamic and responsive web application designed to showcase and filter top news articles based on various categories. Built with React, this application fetches data from an external API and displays it in a user-friendly manner. Users can navigate through different news categories and view detailed information about each article. The project is deployed on [Vercel](https://vercel.com) for easy access and sharing.
+The **News App with React** project is a dynamic and responsive web application designed to showcase and filter top news articles based on various categories. Built with React, this application fetches data from an external API and displays it in a user-friendly manner. Users can navigate through different news categories and view detailed information about each article. The project is deployed on [Vercel](https://vercel.com) for easy access and sharing.
 
 ## Features
 - **Dynamic Filtering:** Users can filter news articles by categories such as technology, sports, health, and more.
@@ -22,5 +22,5 @@ The **Top Course Filtering with React** project is a dynamic and responsive web 
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/top-course-filtering-with-react.git
-   cd top-course-filtering-with-react
+   git clone https://github.com/yourusername/news-app-with-react.git
+   cd news-app-with-react
